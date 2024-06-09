@@ -1,8 +1,15 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteExpense } from "../redux/actions";
+import { FaTrash } from "react-icons/fa";
 
 const ExpenseList = () => {
   const expenses = useSelector((state) => state.expenses);
+  const dispatch = useDispatch();
+
+  const handleDelete = (id) => {
+    dispatch(deleteExpense(id));
+  };
 
   return (
     <div className="expense-list">
@@ -11,12 +18,19 @@ const ExpenseList = () => {
         {expenses.map((expense) => {
           return (
             <li key={expense.id}>
-              <p>
+              <p className="item-name">
                 <span className="expense-list-detail">
                   {expense.description} - {expense.amount}${" "}
                 </span>
                 ({expense.category})
               </p>
+              <button
+                onClick={() => handleDelete(expense.id)}
+                className="delete-btn"
+                type="button"
+              >
+                <FaTrash />
+              </button>
             </li>
           );
         })}
