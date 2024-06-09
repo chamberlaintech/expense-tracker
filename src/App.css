@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    min-height: 100vh;
+    color: #FFD700;
+    background-color: #191718;
+    padding: 2rem;
+}
+
+.app-title {
+    margin-top: 2rem;
+    font-size: 2.5rem;
+}
+
+.expense-form {
+    width: 100%;
+    max-width: 600px;
+    border-bottom: 5px solid #D3D3D3;
+    padding-bottom: 2rem;
+    align-items: center;
+}
+
+.input-container {
+    margin: 4rem 4rem 1.5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-container input,
+.input-container select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #D3D3D3;
+    background-color: #2a2929;
+    color: #FFD700;
+    width: 20rem;
+}
+
+.input-container input:focus,
+.input-container select:focus {
+    border-color: #FFD700;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-btn {
+    background-color: #FFD700;
+    color: #191718;
+    border: none;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: 700;
+    width: auto;
+}
+
+.submit-btn:hover {
+    background-color: #e0b600;
+}
+
+.details-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4rem;
+    justify-content: space-between;
+    gap: 10rem;
+    border-bottom: 5px solid #D3D3D3;
+    padding-bottom: 4rem;
+}
+
+.summary,
+.expense-list
+.category {
+    width: auto;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.summary h2,
+.expense-list h2,
+.category h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+.summary p,
+.expense-list p {
+    color: #FFFFFF;
+    font-size: 1rem;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #D3D3D3;
+}
+
+li:hover {
+    background-color: #333;
+}
+
+.expense-list-detail {
+    font-weight: 800;
+    color: #FFD700;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.summary-container {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.summary p {
+    line-height: 3rem;
+}
+
+@media (max-width: 768px) {
+    .input-container {
+        margin: 4rem 2rem 1rem 2rem;
+    }
+
+    .details-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .expense-list {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-title {
+        font-size: 2rem;
+    }
+
+    .input-container input,
+    .input-container select,
+    .submit-btn {
+        width: 100%;
+    }
+
+    .details-container {
+        margin-top: 2rem;
+        gap: 1rem;
+    }
+
+    .summary,
+    .expense-list,
+    .category {
+        padding: 1rem;
+    }
+
+    .summary h2,
+    .expense-list h2,
+    .category h2 {
+        font-size: 1.25rem;
+    }
+
+    .summary p,
+    .expense-list p {
+        font-size: 0.875rem;
+    }
+}
